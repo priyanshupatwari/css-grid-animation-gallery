@@ -1,0 +1,31 @@
+/* MOBILE FIRST  */
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+
+    /* 1 too skinny, too much code */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+  
+    /* 2 cleaner code */
+    /* grid-template-columns: repeat(12, 1fr); */
+  
+    /* 3  better sizing, but overflows */
+    /* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+  
+    /* 4 final */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* minmax = minimumWidth and maximumWidth */
+    /* make sure my width doesnot go below 240px but allow it expand as big as 1 fractional unit */
+ }
+
+/* Medium screens */
+/* If media querry not applied then there will be numerous columns 
+according to how many columns of minwidth=240px can fit in x-axis horizontaly/row*/
+@media screen and (min-width: 1000px) {
+    .basic-grid {
+        /* make it only 4 columns when stretched more than 1000px */
+        grid-template-columns: repeat(4, 1fr);  
+          /*reapeat(no.Of.Columns, Width-Column--Each */ 
+     } 
+}
+

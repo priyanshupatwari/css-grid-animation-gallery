@@ -1,0 +1,19 @@
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* make sure my width doesnot go below 240px but allow it expand as big as 1 fractional unit */
+  grid-auto-rows: 240px;
+}
+/* MOBILE FIRST */
+/* Medium screens */
+@media screen and (min-width: 600px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+}
